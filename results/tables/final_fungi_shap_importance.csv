@@ -1,0 +1,29 @@
+Feature,MeanAbsSHAP
+soilInCaClpH_mean,0.7173547
+field_latitude,0.2693732
+soilInWaterpH_mean,0.22450511
+precip_total,0.1624057
+topWetness_mean,0.1620867
+dryMassFraction_mean,0.15738316
+airTemp_mean,0.13765664
+field_longitude,0.13367873
+shortwave_mean,0.11858616
+humidity_mean,0.115741074
+par_mean,0.11021167
+soilMoisture_mean,0.09049017
+surfaceTemp_mean,0.06404539
+month,0.06388274
+soilTemp,0.059686966
+sampleBottomDepth,0.053298958
+crop_type_Evergreen Forest,0.041172702
+crop_type_Grass/Pasture,0.031010391
+sampleTopDepth,0.027625915
+season_Summer,0.015741644
+horizon_O,0.008584878
+crop_type_Shrubland,0.0073109963
+crop_type_Mixed Forest,0.0031781767
+season_Spring,0.003101986
+crop_type_Woody Wetlands,0.0028670398
+season_Winter,0.0020029654
+crop_type_Winter Wheat,0.0004030859
+crop_type_Unknown,0.0
