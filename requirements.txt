@@ -1,0 +1,16 @@
+# SoilMind notebook requirements
+# Matched to imports used in SoilMind_An_Integrated_Representation_Learning_Framework_for_Soil_Microbial_Abundance_and_Ecological_Generalization.ipynb
+
+numpy
+pandas
+matplotlib
+seaborn
+scipy
+scikit-learn
+xgboost
+shap
+torch
+jupyter
+notebook
+ipykernel
+openpyxl

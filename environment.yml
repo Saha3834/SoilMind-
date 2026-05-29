@@ -1,0 +1,20 @@
+name: SoilMind: An Integrated Representation Learning Framework for Soil Microbial Abundance and Ecological Generalization.
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - jupyterlab
+  - notebook
+  - ipykernel
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - pip:
+      - xgboost
+      - shap
+      - torch
