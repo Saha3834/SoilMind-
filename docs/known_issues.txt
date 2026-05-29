@@ -1,0 +1,44 @@
+SoilMind Known Issues
+
+1. Environment-specific package issues
+- XGBoost may not be installed by default in some local Python or VS Code environments.
+- SHAP may fail in some Linux environments due to package conflicts involving coverage or numba-related dependencies.
+- If package import errors occur, recreate the environment using the provided requirements.txt or environment.yml.
+
+2. Local path dependency
+- The notebook expects dataset files to exist at specific local paths.
+- Users may need to edit file path cells before execution on a different machine.
+
+3. Representation-learning computational limits
+- The encoded fungi feature matrix becomes very large after preprocessing.
+- Full-scale representation-learning experiments may exceed local memory limits.
+- The final notebook therefore uses a reduced-feature approximation in parts of the representation-learning workflow for feasible execution.
+
+4. Benchmark vs representation-learning comparability
+- The frozen ecological benchmark is built from a curated ecological feature set.
+- The later representation-learning branch uses a broader fungi-specific encoded matrix before dimensional reduction.
+- Because of this difference, representation-learning scores should not be interpreted as a perfectly matched one-to-one replacement for the ecological benchmark.
+
+5. Notebook execution time
+- Some sections, especially representation learning and SHAP computation, may take substantial time depending on hardware.
+- CPU-only execution is possible but may be slow.
+
+6. Figure export behavior
+- Some figures are displayed in notebook output but are not always automatically saved unless explicit save lines are present.
+- Users may need to add or rerun figure-export lines for thesis-ready image files.
+
+7. Reproducibility considerations
+- The notebook is organized for top-to-bottom execution, but rerunning isolated later cells without prior setup can cause variable or dependency errors.
+- It is recommended to run the notebook sequentially from the start.
+
+8. Duplicate or draft text outside code
+- Some report drafts associated with the project contained duplicated sections or placeholder text during thesis preparation.
+- These are report-writing issues rather than code issues, but they should be checked before final submission if notebook outputs are copied into written chapters.
+
+9. Hardware variability
+- Results should remain broadly reproducible, but runtime and memory behavior will vary across machines.
+- Reduced-feature settings may be necessary on lower-memory systems.
+
+10. No production deployment target
+- This project is a research notebook workflow, not a deployed production system.
+- Deployment and infrastructure documentation therefore focus on reproducible local execution rather than service deployment.

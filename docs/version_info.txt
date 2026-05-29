@@ -1,0 +1,58 @@
+SoilMind Version Information
+
+Project name
+-SoilMind: An Integrated Representation Learning Framework for Soil Microbial Abundance and Ecological Generalization.
+
+Primary notebook used for handover
+- SoilMind_An_Integrated_Representation_Learning_Framework_for_Soil_Microbial_Abundance_and_Ecological_Generalization.ipynb
+
+Project type
+- Research notebook workflow for integrated ecological data modelling and representation learning
+
+Submitted version:
+V1.0 - SoilMind_An_Integrated_Representation_Learning_Framework_for_Soil_Microbial_Abundance_and_Ecological_Generalization.ipynb
+V1.1- SoilMind_An_Integrated_Representation_Learning_Framework_for_Soil_Microbial_Abundance_and_Ecological_Generalization.py
+
+Recommended version
+  V1.0- SoilMind_An_Integrated_Representation_Learning_Framework_for_Soil_Microbial_Abundance_and_Ecological_Generalization.ipynb
+
+
+Core environment summary
+- Python 3.10 or newer recommended
+- Main package groups:
+  pandas
+  numpy
+  matplotlib
+  seaborn
+  scipy
+  scikit-learn
+  xgboost
+  shap
+  torch
+  jupyter / notebook / ipykernel
+
+Notebook workflow status
+- Frozen ecological benchmark: included
+- Strict validation workflow: included
+- Representation-learning extension: included
+- SHAP interpretation: included
+- Latent-space analysis: included
+- Clustering / ecological state analysis: included where present in final workflow
+
+Important reproducibility note
+- The notebook should be run from top to bottom in a clean environment.
+- Local file paths may need adjustment depending on machine structure.
+- Some sections rely on reduced-feature approximations for feasible local execution.
+
+Suggested final repository contents
+- annotated notebook
+- README
+- requirements.txt
+- environment.yml
+- raw and processed data folders
+- results tables
+- exported figures
+- testing notes
+- handover notes
+
+

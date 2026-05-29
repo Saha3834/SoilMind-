@@ -1,0 +1,91 @@
+SoilMind Run Order
+
+Primary notebook
+1. Open: 
+
+SoilMind_An_Integrated_Representation_Learning_Framework_for_Soil_Microbial_Abundance_and_Ecological_Generalization.ipynb
+
+Recommended execution order
+1. Environment and imports
+   - Run the setup and import cells first.
+   - Confirm all required packages load successfully.
+
+2. Paths, directories, and configuration
+   - Check dataset file paths before running the notebook.
+   - Update any local paths if they differ from your machine structure.
+
+3. Data loading
+   - Load the integrated soil–microbe dataset and any required source files.
+   - Confirm shapes, key columns, and target availability.
+
+4. Data cleaning and preparation
+   - Run missingness checks, feature filtering, target preparation, and subgroup creation.
+   - Keep the distinction between:
+     a) master/integrated dataset
+     b) model-ready ecological dataset
+
+5. Frozen ecological benchmark
+   - Run the benchmark section fully before modifying anything downstream.
+   - This section produces the reference ecological results for:
+     a) global task
+     b) fungi subgroup
+     c) bacteria/archaea subgroup
+
+6. Strict validation
+   - Run all validation cells for:
+     a) random split
+     b) 5-fold cross-validation
+     c) GroupKFold by site
+     d) time-aware holdout
+   - Save result tables before moving to representation learning.
+
+7. Interpretation for benchmark models
+   - Run feature importance / SHAP cells for the final fungi benchmark model.
+   - Export final figures used in the thesis where applicable.
+
+8. Representation-learning extension
+   - Run the fungi representation-learning section after the frozen benchmark is complete.
+   - This includes:
+     a) encoded fungi feature matrix preparation
+     b) train/test split
+     c) autoencoder training
+     d) latent embedding extraction
+     e) reduced raw vs latent vs reduced raw+latent comparison
+
+9. Latent-space analysis
+   - Run PCA visualization on the learned latent representation.
+   - Export the latent-space figure if required for the thesis.
+
+10. Clustering / ecological state analysis
+    - Run clustering metrics, cluster assignment analysis, and Kruskal–Wallis testing if included in the final notebook.
+
+11. Final exports
+    - Save:
+      a) processed datasets
+      b) result tables
+      c) figures
+      d) any summary CSV files used in the report
+
+Important execution notes
+- Run cells from top to bottom unless you are intentionally resuming from a known checkpoint.
+- Do not start the representation-learning section before the ecological benchmark has been frozen.
+- If memory limits are reached in the representation-learning section, use the reduced-feature workflow already built into the notebook.
+- If SHAP or XGBoost fail due to environment issues, resolve package installation first before continuing.
+- Some figures are shown directly in notebook output and may need explicit save lines added if you want image files exported.
+
+Recommended final artefacts to preserve
+- integrated/master dataset
+- model-ready ecological dataset
+- fungi and bacteria/archaea subgroup datasets
+- frozen benchmark result tables
+- strict-validation result tables
+- SHAP figures
+- latent PCA figure
+- clustering metrics and abundance-state statistics
+
+If rerunning on a new machine
+1. Create the environment from requirements.txt or environment.yml
+2. Place input datasets in the expected data folder
+3. Open the annotated notebook
+4. Run all cells in order
+5. Check exported outputs in the results folders

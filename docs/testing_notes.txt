@@ -1,0 +1,62 @@
+SoilMind Testing and Quality Notes
+
+Testing approach
+The project was tested as a research notebook workflow rather than as a packaged software product. Testing focused on whether the integrated dataset could be loaded correctly, whether benchmark and validation sections executed consistently, whether subgroup specific modelling behaved as expected and whether saved outputs matched the reported results used in the thesis.
+
+Testing performed
+1. Data integrity and loading checks
+- Verified that the required integrated dataset files could be loaded successfully.
+- Checked dataset shapes, target availability, and key grouping columns such as site and time fields where applicable.
+- Confirmed that subgroup datasets for fungi and bacteria/archaea were created correctly.
+
+2. Preprocessing and feature-governance checks
+- Reviewed missingness patterns and feature completeness.
+- Confirmed separation between the broader integrated/master dataset and the curated model-ready ecological dataset.
+- Checked that identifiers and leakage-prone fields were removed from benchmark modelling where intended.
+
+3. Frozen benchmark checks
+- Reran major benchmark sections to confirm that the ecological benchmark workflow was stable.
+- Preserved benchmark summaries before extending the notebook further.
+- Confirmed benchmark evaluation across:
+  a) global task
+  b) fungi subgroup
+  c) bacteria/archaea subgroup
+
+4. Validation checks
+- Verified execution of the full validation framework:
+  a) random split
+  b) 5-fold cross-validation
+  c) GroupKFold by site
+  d) time-aware holdout
+- Checked that the results reflected the expected difference between interpolation and stricter ecological generalization.
+
+5. Interpretation checks
+- Verified that final fungi interpretation outputs were generated for SHAP-based analysis.
+- Checked that final figures used in the thesis corresponded to actual notebook outputs rather than manual reconstruction.
+
+6. Representation-learning checks
+- Confirmed that the fungi representation-learning branch executed using the reduced-feature workflow required for feasible local runtime.
+- Checked that autoencoder training showed stable behavior and that latent embeddings were produced successfully.
+- Verified downstream comparison of:
+  a) reduced raw fungi features
+  b) latent-only representation
+  c) reduced raw + latent features
+
+7. Clustering and statistical checks
+- Verified clustering metrics and abundance-difference testing where included in the final notebook workflow.
+- Checked that statistical summaries used in the thesis matched saved outputs.
+
+Quality controls used
+- Sequential notebook execution from top to bottom
+- Preservation of frozen benchmark results before adding the representation-learning extension
+- Saved result tables and exported figures for traceability
+- Cross-checking written thesis results against notebook-generated outputs
+- Separation of benchmark interpretation from broader representation-learning claims
+
+Known quality limitations
+- Some environment-specific package issues may affect xgboost or shap setup.
+- Representation-learning experiments rely in part on reduced-feature approximations due to memory constraints.
+- The representation-learning branch is informative, but it is not a perfectly matched one-to-one replacement for the frozen ecological benchmark because the feature governance differs.
+
+Conclusion
+The testing strategy emphasized reproducibility, traceability, and methodological defensibility. The notebook was validated as a working research pipeline for integrated ecological modelling, strict validation, interpretation, and initial representation learning, with known computational and environment-related limitations documented separately.

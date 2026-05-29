@@ -1,0 +1,75 @@
+SoilMind Hardware and Runtime Notes
+
+Project type
+- Research notebook workflow for ecological data integration, benchmark modelling, strict validation, and representation learning.
+- Not designed as a production deployment system.
+
+Primary execution environment
+- Jupyter Notebook or VS Code notebook environment
+- Python-based scientific computing workflow
+
+Recommended software environment
+- Python 3.10 or newer
+- Core libraries:
+  pandas
+  numpy
+  matplotlib
+  seaborn
+  scipy
+  scikit-learn
+  xgboost
+  shap
+  torch
+  notebook / jupyter / ipykernel
+
+Hardware expectations
+Minimum practical setup
+- Modern multi-core CPU
+- 16 GB RAM recommended for benchmark sections
+- More memory is preferable for encoded-feature and representation-learning sections
+
+Recommended setup
+- Multi-core CPU
+- 32 GB RAM or more for smoother local execution
+- Optional GPU for faster PyTorch autoencoder training, but not required
+
+Runtime behavior by section
+1. Data loading and cleaning
+- Usually moderate runtime
+- Depends mainly on dataset size and disk speed
+
+2. Frozen ecological benchmark
+- Moderate runtime
+- XGBoost and repeated validation may take noticeable time but are generally feasible on CPU
+
+3. Strict validation
+- Longer runtime than a single train/test split because multiple folds and grouped splits are evaluated
+
+4. SHAP interpretation
+- Can be slow depending on model size and number of samples used for explanation
+- May require extra patience on CPU-only systems
+
+5. Representation-learning section
+- Most computationally sensitive section of the notebook
+- The encoded fungi matrix becomes very large after preprocessing
+- Reduced-feature approximations are used in the final workflow to keep local execution feasible
+
+6. Latent-space visualization and clustering
+- Usually manageable after embeddings are already generated
+
+Important runtime notes
+- Exact runtime varies strongly with hardware, package versions, and whether figures are exported
+- CPU-only execution is supported
+- GPU is optional and mainly helps the autoencoder training section
+- If memory errors occur, the reduced-feature workflow should be used rather than forcing the full encoded matrix
+
+Observed practical constraints in this project
+- Large one-hot encoded feature matrices can exceed local memory limits
+- Some package/environment issues may affect xgboost or shap setup in different machines
+- Sequential execution from the start of the notebook is recommended for stable runtime behavior
+
+Best practice
+- Run benchmark sections first
+- Save intermediate outputs and result tables
+- Only proceed to representation learning after the benchmark is frozen
+- Export final figures as image files for reporting and handover
