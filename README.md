@@ -66,15 +66,13 @@ source soilmind_env/bin/activate   # Linux/macOS
 pip install -r requirements.txt
 ```
 
-If using Conda, create the environment from `environment.yml` if provided.
+If using Conda, create the environment from `environment.yml`.
 
 ## Data Files
 The notebook expects a final integrated SoilMind CSV file. In the annotated journal notebook, the code checks `DEFAULT_DATA_PATHS` and uses the first valid file path that exists.
 
 Examples of files referred to in the project:
 - `SoilMind_v3_with_coordinates_and_nasa.csv`
-- `SoilMind_v3_with_coordinates_and_nasa_OGversion.csv`
-- `merged_NEON_microbiome.csv`
 
 Ensure the required CSV is placed in the correct data location before running the notebook.
 
@@ -82,13 +80,13 @@ Ensure the required CSV is placed in the correct data location before running th
 1. Create and activate the Python environment.
 2. Install the dependencies from `requirements.txt`.
 3. Place the required dataset file(s) in the expected directory.
-4. Open `D-SoilMind_Journal_repr_generalization_annotated.ipynb`.
+4. Open `SoilMind_An_Integrated_Representation_Learning_Framework_for_Soil_Microbial_Abundance_and_Ecological_Generalization.ipynb`.
 5. Run the notebook from top to bottom.
 6. Check the generated outputs in the notebook output folders.
 
 ## Notebook Output Locations
 The notebook writes outputs under:
-- `content/journal_pipeline_outputs/`
+- `content/SoilMind_outputs2/`
 
 Subfolders created by the notebook:
 - `figures/`
