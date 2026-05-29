@@ -36,7 +36,6 @@ Recommended package structure:
 - `03_results/tables/` — exported CSV tables from the notebook
 - `03_results/figures/` — exported figures from the notebook
 - `04_reproducibility/` — run order, known issues, hardware/runtime notes
-- `05_handover_notes/` — overview, contribution summary, and future-work notes
 
 ## Required Environment
 Recommended environment:
